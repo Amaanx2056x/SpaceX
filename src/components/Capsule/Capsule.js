@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { getAllCapsules } from "../../request/capsule";
 import Spinner from "../Layout/Spinner";
 import Capsuleitem from "./Capsuleitem";
-
+import "../../css/custom.css";
 const Capsule = () => {
   let [load, setLoad] = useState(true);
   let [text, setText] = useState("");
@@ -25,12 +25,16 @@ const Capsule = () => {
   ) : (
     <div className="album py-5 bg-light">
       <div className="container">
-        <h2>Capsules</h2>
-        <input
-          type="text"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
+        <div className="topsetting">
+          <h2 className="title">Capsules</h2>
+          <input
+            type="text"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            className="search"
+            placeholder="Search"
+          />
+        </div>
 
         <div className="row">
           {!capsule ? (

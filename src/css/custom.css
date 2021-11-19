@@ -15,6 +15,18 @@
   }
 }
 
+@media (max-width: 768px) {
+  .topsetting {
+    display: block !important;
+  }
+  .title {
+    width: 100%;
+  }
+  .search {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+}
 .jumbotron p:last-child {
   margin-bottom: 0;
 }
@@ -34,4 +46,28 @@ footer {
 
 footer p {
   margin-bottom: 0.25rem;
+}
+
+.topsetting {
+  display: flex;
+  justify-content: space-between;
+}
+.search {
+  width: 250px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  height: 40px;
+  padding-left: 10px;
+}
+::placeholder {
+  padding: 10px;
+}
+.mycard {
+  height: 450px;
+}
+.info-card {
+  border: 1px solid #000;
+}
+.fa-angle-down {
+  float: right;
 }

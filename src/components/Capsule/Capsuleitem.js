@@ -1,26 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Capsuleitem = ({
-  capsule: {
-    capsule_serial,
-    capsule_id,
-    status,
-    original_launch,
-    original_launch_unix,
-    missions,
-    landings,
-    type,
-    details,
-    reuse_count,
-  },
-}) => {
+const Capsuleitem = ({ capsule: { capsule_serial, type, details } }) => {
   return (
     <div className="col-md-4">
-      <div className="card mb-4 shadow-sm">
+      <div className="card mb-4 shadow-sm mycard">
         <img
           className="card-img-top"
-          src="https://via.placeholder.com/150"
+          src="https://images.unsplash.com/photo-1601892782633-675465fa7f3a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=876&q=80"
           alt=""
         />
         <div className="card-body">

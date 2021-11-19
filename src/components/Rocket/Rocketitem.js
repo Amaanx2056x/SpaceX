@@ -30,13 +30,13 @@ const Rocketitem = ({
 }) => {
   return (
     <div className="col-md-4">
-      <div className="card mb-4 shadow-sm">
+      <div className="card mb-4 shadow-sm mycard">
         <img className="card-img-top" src={flickr_images[0]} alt="" />
         <div className="card-body">
           <h1>{rocket_name}</h1>
-          <p className="card-text">{description}</p>
+          <p className="card-text">{description.slice(0, 100)}...</p>
           <div className="d-flex justify-content-between align-items-center">
-            <Link className="btn btn-secondary" to={`/capsule/${rocket_id}`}>
+            <Link className="btn btn-secondary" to={`/rocket/${rocket_id}`}>
               More...
             </Link>
             <small className="text-muted">{country}</small>

@@ -4,6 +4,7 @@ import Capsule from "./components/Capsule/Capsule";
 import Rocket from "./components/Rocket/Rocket";
 import Footer from "./components/Layout/Footer";
 import CapsuleDetails from "./components/Capsule/CapsuleDetails";
+import RocketDetails from "./components/Rocket/RocketDetails";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route exact path="/" element={<Capsule />} />
           <Route exact path="/capsule/:id" element={<CapsuleDetails />} />
           <Route exact path="/rocket" element={<Rocket />} />
+          <Route exact path="/rocket/:id" element={<RocketDetails />} />
         </Routes>
         <Footer />
       </Router>
