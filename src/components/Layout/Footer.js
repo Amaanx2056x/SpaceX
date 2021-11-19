@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -7,12 +6,9 @@ export const Footer = () => {
       <footer className="text-muted">
         <div className="container">
           <p className="float-right">
-            <Link to="#">Back to top</Link>
+            <a href="#">Back To Top</a>
           </p>
-          <p>
-            Album example is &copy; Bootstrap, but please download and customize
-            it for yourself!
-          </p>
+          <p>Developed By Amaan Qureshi &copy; 2021</p>
         </div>
       </footer>
     </div>
