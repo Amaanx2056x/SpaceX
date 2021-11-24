@@ -48,7 +48,7 @@ const Rocket = () => {
                   roc.rocket_id.toUpperCase().includes(text.toUpperCase())
                 ) {
                   return roc;
-                }
+                } else return null;
               })
               .map((roc, index) => <Rocketitem key={index} rocket={roc} />)
           )}

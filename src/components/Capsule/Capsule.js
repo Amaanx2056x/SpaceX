@@ -3,12 +3,19 @@ import React, { useEffect, useState } from "react";
 import { getAllCapsules } from "../../request/capsule";
 import Spinner from "../Layout/Spinner";
 import Capsuleitem from "./Capsuleitem";
+import ReactPaginate from "react-paginate";
 import "../../css/custom.css";
 const Capsule = () => {
   let [load, setLoad] = useState(true);
   let [text, setText] = useState("");
   let [capsule, setCapsule] = useState([]);
-
+  let [page, setPage] = useState(0);
+  let perPage = 6;
+  let pageVisited = page * perPage;
+  let pageCount = Math.ceil(capsule.length / perPage);
+  let changePage = ({ selected }) => {
+    setPage(selected);
+  };
   async function getData() {
     let data = await getAllCapsules();
     if (data.error) {
@@ -48,10 +55,23 @@ const Capsule = () => {
                   cap.capsule_serial.toUpperCase().includes(text.toUpperCase())
                 ) {
                   return cap;
-                }
+                } else return null;
               })
+              .slice(pageVisited, pageVisited + perPage)
               .map((cap, index) => <Capsuleitem key={index} capsule={cap} />)
           )}
+          <ReactPaginate
+            previousLabel={"<<"}
+            nextLabel={">>"}
+            pageCount={pageCount}
+            onPageChange={changePage}
+            containerClassName={"pagination"}
+            previousLinkClassName={"btn btn-primary"}
+            nextLinkClassName={"btn btn-primary"}
+            disabledClassName={"disabled"}
+            activeLinkClassName={"active"}
+            pageLinkClassName={"btn btn-light"}
+          />
         </div>
       </div>
     </div>
